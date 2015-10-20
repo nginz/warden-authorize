@@ -1,0 +1,28 @@
+{
+  "name": "warden-authorize",
+  "version": "1.0.0",
+  "description": "Socket.io authorization middleware against warden-based sessions",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nginz/warden-authorize.git"
+  },
+  "keywords": [
+    "socket.io",
+    "authorization",
+    "middleware",
+    "warden"
+  ],
+  "author": "Moustafa Badawy <moustafa.badawym@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nginz/warden-authorize/issues"
+  },
+  "homepage": "https://github.com/nginz/warden-authorize",
+  "dependencies": {
+    "xtend": "^4.0.0"
+  }
+}
