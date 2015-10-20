@@ -20,7 +20,7 @@ var io               = require("socket.io")(server),
     WardenAuth       = require("warden-authorize");
 
 io.use(WardenAuth.authorize({
-  key:          'user',       // *optional* (default: user) the name of the model for warden session
+  key:          'user',              // *optional* (default: user) the name of the model for warden session
   store:        sessionStore,        // we NEED to use a sessionstore. no memorystore please
   success:      onAuthorizeSuccess,  // *optional* callback on success
   fail:         onAuthorizeFail,     // *optional* callback on fail/error
@@ -50,3 +50,15 @@ socket = io.connect(socketIOURL, {
   query: 'session_id=' + '<server-session-id>'
 });
 ```
+
+## SocketIO
+Now, on socket io connection you will have access to the userKey that was set by warden in session.
+```javascript
+  io.on('connection', function(socket) {
+    var userKey = socket.request.userKey;
+    ...
+  }
+```
+
+## Important Note
+The middleware expects session data to be JSON serialized. If the data is marshalled, use [node-marshal](https://github.com/instore/node-marshal) to deserialize session data.
