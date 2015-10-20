@@ -1,6 +1,6 @@
 {
   "name": "warden-authorize",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Socket.io authorization middleware against warden-based sessions",
   "main": "lib/index.js",
   "scripts": {
